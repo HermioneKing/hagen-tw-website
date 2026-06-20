@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "hero": {
+    "featured": "Featured products"
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Explore what Hagen Creative builds and ships.",
+    "viewDetails": "View details",
+    "features": "Features",
+    "gallery": "Gallery",
+    "back": "Back to products"
+  },
+  "about": {
+    "title": "About"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send message",
+    "success": "Thanks — we received your message.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-warm-canvas: #fbfaf9;
+  --color-stone-surface: #f2f0ed;
+  --color-parchment-card: #f8f7f4;
+  --color-graphite: #474645;
+  --color-charcoal-primary: #343433;
+  --color-midnight: #121212;
+  --color-obsidian: #000000;
+  --color-ash: #848281;
+  --color-fog: #c6c6c6;
+  --color-smoke: #a7a7a7;
+  --color-pepper: #282624;
+  --color-ember-orange: #ff3e00;
+  --color-meadow-green: #00ca48;
+  --color-sky-blue: #0090ff;
+  --color-sunburst-yellow: #ffbb26;
+  --color-cream-button: #f6f4ef;
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-subtle: color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset;
+  --shadow-nav: rgba(0, 0, 0, 0.04) 0px 0px 0px 1px;
+  --shadow-lg: rgba(0, 0, 0, 0.15) 0px 0px 24px 0px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-warm-canvas text-graphite font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card-inset {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .btn-pill-dark {
+    @apply inline-flex items-center justify-center rounded-[32px] bg-midnight px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-charcoal-primary;
+  }
+
+  .btn-pill-light {
+    @apply inline-flex items-center justify-center rounded-[32px] bg-cream-button px-5 py-2.5 text-sm font-medium text-midnight transition-colors duration-200 hover:bg-stone-surface;
+  }
+
+  .link-accent {
+    @apply text-sm font-medium text-ember-orange transition-opacity duration-200 hover:opacity-80;
+  }
+
+  .section-gap {
+    @apply py-24 md:py-32;
+  }
+
+  .page-container {
+    @apply mx-auto w-full max-w-[1200px] px-6;
+  }
+
+  .display-heading {
+    font-family: var(--font-display);
+    @apply text-[44px] leading-[1.09] font-medium tracking-[-0.031em] text-charcoal-primary md:text-[68px] md:tracking-[-2.11px];
+  }
+
+  .section-heading {
+    @apply text-[44px] leading-[1.09] font-semibold tracking-[-1.14px] text-midnight;
+  }
+}
