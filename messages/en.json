@@ -14,6 +14,9 @@
     "viewDetails": "View details",
     "features": "Features",
     "gallery": "Gallery",
+    "galleryPrevious": "Previous image",
+    "galleryNext": "Next image",
+    "links": "Links",
     "back": "Back to products"
   },
   "about": {

@@ -5,22 +5,35 @@ import type { Media } from '@/payload-types'
 type ProductShowcaseProps = {
   title: string
   image?: Media | number | null
+  fallbackSrc?: string
 }
 
-export function ProductShowcase({ title, image }: ProductShowcaseProps) {
+export function ProductShowcase({ title, image, fallbackSrc }: ProductShowcaseProps) {
   const imageUrl = getMediaUrl(image as Media | null)
+  const media = image && typeof image === 'object' ? image : null
+  const imageWidth = media?.width ?? 200
+  const imageHeight = media?.height ?? 200
+  const src = imageUrl ?? fallbackSrc
 
   return (
-    <div className="overflow-hidden rounded-t-3xl rounded-b-3xl bg-obsidian p-1 shadow-lg">
-      <div className="relative aspect-[9/16] w-full max-w-sm overflow-hidden rounded-[20px] bg-midnight">
-        {imageUrl ? (
-          <Image src={imageUrl} alt={title} fill className="object-cover" sizes="400px" priority />
-        ) : (
-          <div className="flex h-full items-center justify-center">
-            <div className="h-20 w-20 rounded-sm bg-white/10" />
-          </div>
-        )}
-      </div>
+    <div className="w-full max-w-[200px]">
+      {src ? (
+        <div className="overflow-hidden rounded-xl bg-parchment-card p-3">
+          <Image
+            src={src}
+            alt={title}
+            width={imageUrl ? imageWidth : 96}
+            height={imageUrl ? imageHeight : 96}
+            className="h-auto w-full"
+            sizes="200px"
+            priority
+          />
+        </div>
+      ) : (
+        <div className="overflow-hidden rounded-xl bg-parchment-card p-3">
+          <div className="aspect-square w-full rounded-lg bg-stone-surface" />
+        </div>
+      )}
     </div>
   )
 }

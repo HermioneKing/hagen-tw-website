@@ -73,6 +73,36 @@ export const Products: CollectionConfig = {
       ],
     },
     {
+      name: 'links',
+      type: 'group',
+      fields: [
+        {
+          name: 'items',
+          type: 'array',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'url',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'qrCode',
+              type: 'upload',
+              relationTo: 'media',
+              admin: {
+                description: 'QR code for this link',
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'published',
       type: 'checkbox',
       defaultValue: false,

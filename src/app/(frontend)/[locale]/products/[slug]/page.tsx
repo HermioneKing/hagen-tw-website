@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import { ProductGallery } from '@/components/ProductGallery'
 import { ProductShowcase } from '@/components/ProductShowcase'
 import { RichTextContent } from '@/components/RichTextContent'
 import { Link } from '@/i18n/navigation'
@@ -56,6 +57,23 @@ export default async function ProductDetailPage({
   const product = result.docs[0]
   if (!product) notFound()
 
+  const linkItems = product.links?.items
+
+  const galleryItems =
+    product.gallery
+      ?.map((item) => {
+        const media = item.image as Media
+        const url = getMediaUrl(media)
+        if (!url) return null
+        return {
+          url,
+          alt: media.alt || product.title,
+          width: media.width,
+          height: media.height,
+        }
+      })
+      .filter((item): item is NonNullable<typeof item> => item !== null) ?? []
+
   return (
     <section className="section-gap">
       <div className="page-container">
@@ -87,26 +105,50 @@ export default async function ProductDetailPage({
               </div>
             ) : null}
 
-            {product.gallery && product.gallery.length > 0 ? (
+            {galleryItems.length > 0 ? (
               <div className="mt-10">
                 <h2 className="mb-4 text-[19px] font-semibold tracking-[-0.25px] text-charcoal-primary">{t('gallery')}</h2>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {product.gallery.map((item, index) => {
-                    const url = getMediaUrl(item.image as Media)
-                    if (!url) return null
-                    return (
-                      <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-xl bg-parchment-card">
-                        <Image src={url} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-                      </div>
-                    )
-                  })}
-                </div>
+                <ProductGallery items={galleryItems} />
               </div>
             ) : null}
           </div>
 
-          <div className="flex justify-center lg:sticky lg:top-24">
+          <div className="flex flex-col items-center gap-8 lg:sticky lg:top-24">
             <ProductShowcase title={product.title} image={product.heroImage} />
+
+            {linkItems && linkItems.length > 0
+              ? linkItems.map((item) => {
+                  const qrMedia = item.qrCode as Media | null | undefined
+                  const qrUrl = getMediaUrl(qrMedia)
+                  return (
+                    <div key={item.id ?? item.url} className="w-full max-w-[200px]">
+                      <h2 className="mb-4 text-center text-[19px] font-semibold tracking-[-0.25px] text-charcoal-primary">
+                        {item.label}
+                      </h2>
+                      {qrUrl ? (
+                        <div className="mb-4 overflow-hidden rounded-xl bg-parchment-card p-3">
+                          <Image
+                            src={qrUrl}
+                            alt={qrMedia?.alt || item.label}
+                            width={qrMedia?.width ?? 200}
+                            height={qrMedia?.height ?? 200}
+                            className="h-auto w-full"
+                            sizes="200px"
+                          />
+                        </div>
+                      ) : null}
+                      <a
+                        href={item.url}
+                        className="link-accent block text-center"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.label}
+                      </a>
+                    </div>
+                  )
+                })
+              : null}
           </div>
         </div>
       </div>

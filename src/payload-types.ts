@@ -210,6 +210,19 @@ export interface Product {
         id?: string | null;
       }[]
     | null;
+  links?: {
+    items?:
+      | {
+          label: string;
+          url: string;
+          /**
+           * QR code for this link
+           */
+          qrCode?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
   published?: boolean | null;
   sortOrder?: number | null;
   updatedAt: string;
@@ -371,6 +384,18 @@ export interface ProductsSelect<T extends boolean = true> {
     | {
         image?: T;
         id?: T;
+      };
+  links?:
+    | T
+    | {
+        items?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              qrCode?: T;
+              id?: T;
+            };
       };
   published?: T;
   sortOrder?: T;

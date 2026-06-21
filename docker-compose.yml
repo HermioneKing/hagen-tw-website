@@ -48,6 +48,8 @@ services:
       NEXT_PUBLIC_SERVER_URL: http://localhost:3000
       DATABASE_PUSH: 'true'
       NODE_ENV: development
+    volumes:
+      - ./media:/app/media
 
 volumes:
   postgres_data:

@@ -16,13 +16,13 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="card-inset flex h-full flex-col rounded-[10px] bg-white p-8">
-      <div className="mb-6 overflow-hidden rounded-xl bg-parchment-card p-4">
+      <div className="mb-6">
         {imageUrl ? (
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-obsidian">
+          <div className="relative aspect-square w-full overflow-hidden rounded-lg">
             <Image src={imageUrl} alt={product.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
           </div>
         ) : (
-          <div className="flex aspect-[4/3] items-center justify-center rounded-lg bg-obsidian shadow-lg">
+          <div className="flex aspect-square items-center justify-center rounded-lg bg-parchment-card">
             <div className="h-16 w-16 rounded-sm bg-warm-canvas/10" />
           </div>
         )}
