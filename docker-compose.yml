@@ -29,6 +29,8 @@ services:
     environment:
       DATABASE_URI: postgresql://hagen:hagen@db:5432/hagen
       NEXT_PUBLIC_SERVER_URL: http://localhost:3000
+      DATABASE_PUSH: 'true'
+      NODE_ENV: development
 
 volumes:
   postgres_data:

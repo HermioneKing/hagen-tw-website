@@ -29,5 +29,47 @@ export const SiteSettings: GlobalConfig = {
       type: 'text',
       localized: true,
     },
+    {
+      name: 'footer',
+      type: 'group',
+      label: 'Footer',
+      fields: [
+        {
+          name: 'brandName',
+          type: 'text',
+        },
+        {
+          name: 'copyrightText',
+          type: 'text',
+          localized: true,
+        },
+        {
+          name: 'email',
+          type: 'email',
+        },
+        {
+          name: 'location',
+          type: 'textarea',
+          localized: true,
+        },
+        {
+          name: 'links',
+          type: 'array',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              required: true,
+              localized: true,
+            },
+            {
+              name: 'url',
+              type: 'text',
+              required: true,
+            },
+          ],
+        },
+      ],
+    },
   ],
 }

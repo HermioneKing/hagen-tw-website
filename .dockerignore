@@ -10,3 +10,4 @@ docker-compose*
 README.md
 .cursor
 debug-*.log
+push-schema.mjs

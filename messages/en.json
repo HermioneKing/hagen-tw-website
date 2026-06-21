@@ -28,8 +28,5 @@
     "submit": "Send message",
     "success": "Thanks — we received your message.",
     "error": "Something went wrong. Please try again."
-  },
-  "footer": {
-    "rights": "All rights reserved."
   }
 }

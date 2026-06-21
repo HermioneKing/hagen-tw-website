@@ -6,6 +6,7 @@ import type { ReactNode } from 'react'
 import { Footer } from '@/components/Footer'
 import { Nav } from '@/components/Nav'
 import { locales, type Locale } from '@/i18n/config'
+import { getPayloadClient } from '@/lib/payload'
 import '../globals.css'
 
 const fraunces = Fraunces({
@@ -40,13 +41,19 @@ export default async function LocaleLayout({
   setRequestLocale(locale)
   const messages = await getMessages()
 
+  const payload = await getPayloadClient()
+  const siteSettings = await payload.findGlobal({
+    slug: 'site-settings',
+    locale: locale as Locale,
+  })
+
   return (
     <html lang={locale} className={`${fraunces.variable} ${inter.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <Nav locale={locale as Locale} />
           <main>{children}</main>
-          <Footer />
+          <Footer footer={siteSettings.footer} />
         </NextIntlClientProvider>
       </body>
     </html>

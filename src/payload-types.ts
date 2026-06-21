@@ -440,6 +440,19 @@ export interface SiteSetting {
   heroSubtext?: string | null;
   heroCtaPrimary?: string | null;
   heroCtaSecondary?: string | null;
+  footer?: {
+    brandName?: string | null;
+    copyrightText?: string | null;
+    email?: string | null;
+    location?: string | null;
+    links?:
+      | {
+          label: string;
+          url: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -500,6 +513,21 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   heroSubtext?: T;
   heroCtaPrimary?: T;
   heroCtaSecondary?: T;
+  footer?:
+    | T
+    | {
+        brandName?: T;
+        copyrightText?: T;
+        email?: T;
+        location?: T;
+        links?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              id?: T;
+            };
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

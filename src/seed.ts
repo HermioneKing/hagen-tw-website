@@ -42,6 +42,17 @@ export async function seed(payload: Payload) {
           'Hagen Creative designs and ships digital products that feel human, playful, and precise.',
         heroCtaPrimary: 'View products',
         heroCtaSecondary: 'About us',
+        footer: {
+          brandName: 'Hagen Creative',
+          copyrightText: 'All rights reserved.',
+          email: 'hello@hagencreative.com',
+          location: 'Taipei, Taiwan',
+          links: [
+            { label: 'Products', url: '/products' },
+            { label: 'About', url: '/about' },
+            { label: 'Contact', url: '/contact' },
+          ],
+        },
       },
     })
 
@@ -54,6 +65,17 @@ export async function seed(payload: Payload) {
         heroSubtext: 'Hagen Creative 設計並推出兼具人性、趣味與精準度的數位產品。',
         heroCtaPrimary: '查看產品',
         heroCtaSecondary: '關於我們',
+        footer: {
+          brandName: 'Hagen Creative',
+          copyrightText: '版權所有。',
+          email: 'hello@hagencreative.com',
+          location: 'Taipei, Taiwan',
+          links: [
+            { label: '產品', url: '/products' },
+            { label: '關於我們', url: '/about' },
+            { label: '聯絡我們', url: '/contact' },
+          ],
+        },
       },
     })
   }
