@@ -1,0 +1,10 @@
+services:
+  db:
+    ports: !reset []
+
+  app:
+    ports: !override
+      - '3008:3000'
+    environment:
+      NEXT_PUBLIC_SERVER_URL: https://hagencreative.tw
+      NODE_ENV: production
