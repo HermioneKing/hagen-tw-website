@@ -19,7 +19,7 @@ services:
   schema-push:
     build:
       context: .
-      target: builder
+      target: sync
     env_file:
       - .env
     environment:
@@ -29,6 +29,26 @@ services:
       db:
         condition: service_healthy
     command: npm run push:schema
+    restart: 'no'
+
+  content-import:
+    build:
+      context: .
+      target: sync
+    env_file:
+      - .env
+    environment:
+      DATABASE_URI: postgresql://hagen:hagen@db:5432/hagen
+      DATABASE_PUSH: 'false'
+    volumes:
+      - ./content:/app/content
+      - ./content/media:/app/media
+    depends_on:
+      db:
+        condition: service_healthy
+      schema-push:
+        condition: service_completed_successfully
+    command: npm run content:import
     restart: 'no'
 
   app:
@@ -41,6 +61,8 @@ services:
         condition: service_healthy
       schema-push:
         condition: service_completed_successfully
+      content-import:
+        condition: service_completed_successfully
     env_file:
       - .env
     environment:
@@ -49,7 +71,7 @@ services:
       DATABASE_PUSH: 'true'
       NODE_ENV: development
     volumes:
-      - ./media:/app/media
+      - ./content/media:/app/media
 
 volumes:
   postgres_data:

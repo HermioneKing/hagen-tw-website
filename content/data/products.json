@@ -1,0 +1,309 @@
+[
+  {
+    "slug": "titan",
+    "published": true,
+    "sortOrder": 1,
+    "heroImage": null,
+    "gallery": [],
+    "links": {
+      "items": []
+    },
+    "locales": {
+      "zh-TW": {
+        "title": "古文戰爭",
+        "summary": "台灣學生很喜歡的文言文遊戲",
+        "description": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "華語地區首款互動式文言文學習遊戲",
+                    "type": "text",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textFormat": 0
+              }
+            ],
+            "direction": "ltr"
+          }
+        },
+        "features": [
+          {
+            "feature": "闖關模式 - 文言文閱讀遊戲"
+          },
+          {
+            "feature": "常讀為經 - 100+文言文經典篇章收藏"
+          },
+          {
+            "feature": "成就統計"
+          },
+          {
+            "feature": "溫習提醒"
+          }
+        ]
+      },
+      "en": {
+        "title": "古文戰爭",
+        "summary": "The favorite Classical Chinese games of Taiwanese students",
+        "description": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "The first-ever interactive Classical Chinese learning game in the Chinese-speaking world",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": "ltr"
+          }
+        },
+        "features": [
+          {
+            "feature": "Game"
+          },
+          {
+            "feature": "Library"
+          },
+          {
+            "feature": "Leader board"
+          },
+          {
+            "feature": "Practice reminder"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "slug": "dse12app",
+    "published": true,
+    "sortOrder": 2,
+    "heroImage": null,
+    "gallery": [],
+    "links": {
+      "items": [
+        {
+          "label": "iOS - Click to Download",
+          "qrCode": null,
+          "url": "#"
+        },
+        {
+          "label": "Android - Click to Download",
+          "qrCode": null,
+          "url": "#"
+        }
+      ]
+    },
+    "locales": {
+      "zh-TW": {
+        "title": "DSE中文12篇範文溫習App",
+        "summary": "香港DSE中文科最強溫習工具",
+        "description": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "text": "Google Play / App Store 教育軟件榜首 #1",
+                    "type": "text",
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr"
+              },
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Android / iOS 評分 4.8+",
+                    "type": "text",
+                    "detail": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null
+              },
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "1/4 DSE 學生使用",
+                    "type": "text",
+                    "detail": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null
+              }
+            ],
+            "direction": "ltr"
+          }
+        },
+        "features": [
+          {
+            "feature": "DSE 範文 - 輕觸詞解、課文熟讀"
+          },
+          {
+            "feature": "台灣學測範文 - 逐句對譯、閱讀練習"
+          },
+          {
+            "feature": "溫習測驗 - 詞語解釋、重組句子、排句成段、選擇題、長問答、關鍵字、修辭辨識"
+          },
+          {
+            "feature": "錯題重做"
+          },
+          {
+            "feature": "長答題筆記"
+          },
+          {
+            "feature": "挑戰模式 - 綜合測驗、全港排行"
+          },
+          {
+            "feature": "自動溫習提醒"
+          },
+          {
+            "feature": "學習資源"
+          },
+          {
+            "feature": "學習表現統計"
+          },
+          {
+            "feature": "普通話課文朗誦"
+          }
+        ]
+      },
+      "en": {
+        "title": "DSE中文12篇範文溫習App",
+        "summary": "The most effective study tool for HKDSE Chinese",
+        "description": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Google Play / App Store Educational Top 1",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              },
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Android / iOS Rating 4.8+",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              },
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "25% HKDSE Market Share",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": "ltr"
+          }
+        },
+        "features": [
+          {
+            "feature": "DSE Passage - Easy-touch dictionary"
+          },
+          {
+            "feature": "Practice Game - More than 5000 questions"
+          }
+        ]
+      }
+    }
+  }
+]

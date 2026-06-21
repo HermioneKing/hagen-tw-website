@@ -40,6 +40,7 @@ next-env.d.ts
 
 .env
 
+# Legacy runtime media dir (use content/media instead)
 /media
 
 # Playwright

@@ -13,6 +13,8 @@
     "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "push:schema": "cross-env NODE_OPTIONS=--no-deprecation tsx -r dotenv/config src/push-schema.ts",
+    "content:export": "cross-env NODE_OPTIONS=--no-deprecation tsx -r dotenv/config src/content/export.ts",
+    "content:import": "cross-env NODE_OPTIONS=--no-deprecation tsx -r dotenv/config src/content/import.ts",
     "seed": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed.ts",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },

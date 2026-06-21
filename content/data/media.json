@@ -1,0 +1,68 @@
+{
+  "titandashboard.jpg": {
+    "alt": {
+      "en": "titancapscreen",
+      "zh-TW": "titancapscreen"
+    }
+  },
+  "titanlogin.jpg": {
+    "alt": {
+      "en": "dse12appscreencap",
+      "zh-TW": "dse12appscreencap"
+    }
+  },
+  "titanlanding.jpg": {
+    "alt": {
+      "en": "titancapscreen",
+      "zh-TW": "titancapscreen"
+    }
+  },
+  "adaptive-icon.png": {
+    "alt": {
+      "en": "titanappicon",
+      "zh-TW": "titanappicon"
+    }
+  },
+  "googleplay-qr.png": {
+    "alt": {
+      "en": "androidqr",
+      "zh-TW": "androidqr"
+    }
+  },
+  "apple-qr.png": {
+    "alt": {
+      "en": "apple-qr",
+      "zh-TW": "apple-qr"
+    }
+  },
+  "leaderboard.png": {
+    "alt": {
+      "en": "dse12appscreencap",
+      "zh-TW": "dse12appscreencap"
+    }
+  },
+  "words.png": {
+    "alt": {
+      "en": "dse12appscreencap",
+      "zh-TW": "dse12appscreencap"
+    }
+  },
+  "passage.png": {
+    "alt": {
+      "en": "dse12appscreencap",
+      "zh-TW": "dse12appscreencap"
+    }
+  },
+  "quiz.png": {
+    "alt": {
+      "en": "titancapscreen",
+      "zh-TW": "titancapscreen"
+    }
+  },
+  "icon-512.png": {
+    "alt": {
+      "en": "dse12appicon",
+      "zh-TW": "dse12appicon"
+    }
+  }
+}

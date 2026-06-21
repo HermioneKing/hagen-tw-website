@@ -1,0 +1,48 @@
+{
+  "en": {
+    "tagline": "Shaping the Future with EdTech",
+    "heroHeadline": "Hagen Creative",
+    "heroSubtext": "Making learning fun",
+    "heroCtaPrimary": "View products",
+    "heroCtaSecondary": "About us",
+    "footer": {
+      "brandName": "Hagen Creative",
+      "copyrightText": "All rights reserved.",
+      "email": "admin@hagencreative.tw",
+      "location": "Taiwan",
+      "links": [
+        {
+          "page": "products",
+          "label": "產品"
+        },
+        {
+          "page": "about",
+          "label": "理念"
+        }
+      ]
+    }
+  },
+  "zh-TW": {
+    "tagline": "教育創科建未來",
+    "heroHeadline": "黑柑創意工作室",
+    "heroSubtext": "寓學習於娛樂",
+    "heroCtaPrimary": "查看產品",
+    "heroCtaSecondary": "關於我們",
+    "footer": {
+      "brandName": "Hagen Creative",
+      "copyrightText": "版權所有。",
+      "email": "admin@hagencreative.tw",
+      "location": "台灣",
+      "links": [
+        {
+          "page": "products",
+          "label": "產品"
+        },
+        {
+          "page": "about",
+          "label": "理念"
+        }
+      ]
+    }
+  }
+}

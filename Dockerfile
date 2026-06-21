@@ -8,6 +8,9 @@ FROM base AS deps
 COPY package.json package-lock.json ./
 RUN npm ci
 
+FROM deps AS sync
+COPY . .
+
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
