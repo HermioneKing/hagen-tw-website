@@ -47,30 +47,6 @@ export default buildConfig({
     fallback: true,
   },
   onInit: async (payload) => {
-    const siteSettingsFieldNames = SiteSettings.fields?.map((field) =>
-      'name' in field ? field.name : field.type,
-    )
-
-    // #region agent log
-    fetch('http://host.docker.internal:7877/ingest/09e51937-fd8a-4dca-bd5b-e1830d3f8944', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '0c403f' },
-      body: JSON.stringify({
-        sessionId: '0c403f',
-        runId: 'pre-fix',
-        hypothesisId: 'H1',
-        location: 'payload.config.ts:onInit',
-        message: 'SiteSettings field names at runtime',
-        data: { fieldNames: siteSettingsFieldNames, hasFooter: siteSettingsFieldNames?.includes('footer') },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {})
-    // #endregion
-
-    payload.logger.info(
-      `[debug-0c403f] SiteSettings fields: ${siteSettingsFieldNames?.join(', ')}`,
-    )
-
     await seed(payload)
   },
 })

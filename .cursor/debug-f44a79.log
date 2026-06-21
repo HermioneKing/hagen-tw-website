@@ -1,0 +1,1 @@
+{"sessionId":"f44a79","runId":"pre-fix","hypothesisId":"H1","location":"payload.config.ts:onInit","message":"SiteSettings footer.links subfields at runtime","data":{"linkSubfields":["label","page","url","id"],"hasPageField":true},"timestamp":1782014998346}

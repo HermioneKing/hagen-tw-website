@@ -1,4 +1,5 @@
 import type { GlobalConfig } from 'payload'
+import { SITE_PAGE_OPTIONS } from '@/lib/site-pages'
 
 export const SiteSettings: GlobalConfig = {
   slug: 'site-settings',
@@ -55,6 +56,21 @@ export const SiteSettings: GlobalConfig = {
         {
           name: 'links',
           type: 'array',
+          hooks: {
+            beforeValidate: [
+              ({ value }) => {
+                if (!Array.isArray(value)) return value
+
+                return value.map((link) => {
+                  if (link?.page !== 'custom') {
+                    return { ...link, url: undefined }
+                  }
+
+                  return link
+                })
+              },
+            ],
+          },
           fields: [
             {
               name: 'label',
@@ -63,9 +79,27 @@ export const SiteSettings: GlobalConfig = {
               localized: true,
             },
             {
+              name: 'page',
+              type: 'select',
+              required: true,
+              options: SITE_PAGE_OPTIONS,
+            },
+            {
               name: 'url',
               type: 'text',
-              required: true,
+              admin: {
+                condition: (_, siblingData) => siblingData?.page === 'custom',
+              },
+              validate: (
+                value: string | null | undefined,
+                { siblingData }: { siblingData?: { page?: string | null } },
+              ) => {
+                if (siblingData?.page === 'custom' && !value) {
+                  return 'URL is required for custom links'
+                }
+
+                return true
+              },
             },
           ],
         },

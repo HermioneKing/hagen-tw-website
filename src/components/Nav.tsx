@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { localeLabels, type Locale } from '@/i18n/config'
 import { Link as LocaleLink, usePathname } from '@/i18n/navigation'
@@ -54,12 +53,6 @@ export function Nav({ locale }: { locale: Locale }) {
               </LocaleLink>
             ))}
           </div>
-          <Link href="/admin" className="btn-pill-light hidden sm:inline-flex">
-            {t('admin')}
-          </Link>
-          <LocaleLink href="/products" className="btn-pill-dark">
-            {t('products')}
-          </LocaleLink>
         </div>
       </div>
     </header>

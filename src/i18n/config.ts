@@ -4,5 +4,5 @@ export const defaultLocale: Locale = 'zh-TW'
 
 export const localeLabels: Record<Locale, string> = {
   en: 'EN',
-  'zh-TW': '繁中',
+  'zh-TW': '中文',
 }

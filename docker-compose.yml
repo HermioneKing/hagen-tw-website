@@ -16,6 +16,21 @@ services:
       timeout: 5s
       retries: 10
 
+  schema-push:
+    build:
+      context: .
+      target: builder
+    env_file:
+      - .env
+    environment:
+      DATABASE_URI: postgresql://hagen:hagen@db:5432/hagen
+      DATABASE_PUSH: 'true'
+    depends_on:
+      db:
+        condition: service_healthy
+    command: npm run push:schema
+    restart: 'no'
+
   app:
     build: .
     restart: unless-stopped
@@ -24,6 +39,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+      schema-push:
+        condition: service_completed_successfully
     env_file:
       - .env
     environment:

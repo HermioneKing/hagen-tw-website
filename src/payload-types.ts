@@ -448,7 +448,8 @@ export interface SiteSetting {
     links?:
       | {
           label: string;
-          url: string;
+          page: 'home' | 'products' | 'about' | 'contact' | 'custom';
+          url?: string | null;
           id?: string | null;
         }[]
       | null;
@@ -524,6 +525,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
           | T
           | {
               label?: T;
+              page?: T;
               url?: T;
               id?: T;
             };

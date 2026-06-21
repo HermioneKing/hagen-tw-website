@@ -1,17 +1,32 @@
 'use client'
 
 import { Link } from '@/i18n/navigation'
+import { getLinkHref } from '@/lib/site-pages'
 import type { SiteSetting } from '@/payload-types'
 
 type FooterProps = {
   footer?: SiteSetting['footer'] | null
 }
 
-const defaultLinks = [
-  { label: 'Products', url: '/products' },
-  { label: 'About', url: '/about' },
-  { label: 'Contact', url: '/contact' },
+type FooterLink = {
+  label: string
+  page?: 'home' | 'products' | 'about' | 'contact' | 'custom' | null
+  url?: string | null
+}
+
+const defaultLinks: FooterLink[] = [
+  { label: 'Products', page: 'products' },
+  { label: 'About', page: 'about' },
+  { label: 'Contact', page: 'contact' },
 ]
+
+function resolveLinkHref(link: FooterLink): string {
+  if (link.page) {
+    return getLinkHref(link.page, link.url)
+  }
+
+  return link.url ?? '/'
+}
 
 export function Footer({ footer }: FooterProps) {
   const brandName = footer?.brandName ?? 'Hagen Creative'
@@ -30,11 +45,15 @@ export function Footer({ footer }: FooterProps) {
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm text-ash">
-          {links.map((link) => (
-            <Link key={link.url} href={link.url} className="hover:text-charcoal-primary">
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link, index) => {
+            const href = resolveLinkHref(link)
+
+            return (
+              <Link key={`${href}-${index}`} href={href} className="hover:text-charcoal-primary">
+                {link.label}
+              </Link>
+            )
+          })}
         </div>
         <div className="text-sm text-fog">
           <p>{email}</p>
